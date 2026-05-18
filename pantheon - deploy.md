@@ -1,11 +1,11 @@
 # Deploy do frontend do Pantheon 
 
-1. cd Pantheon/repositorios/pantheon-isp_frontend-angular
-2. git pull origin pre-master
-3. npm i *(se o repositório for novo ou se precisar instalar novas dependências)*
-4. npx ng b --configuration=production
-5. docker build -t frontend-angular .
-6. cd ../pantheon-isp_geral-backend-devops/ && docker compose up -d frontend
+1. `cd Pantheon/repositorios/pantheon-isp_frontend-angular`
+2. `git pull origin pre-master`
+3. `npm i` *(se o repositório for novo ou se precisar instalar novas dependências)*
+4. `npx ng b --configuration=production`
+5. `docker build -t frontend-angular .`
+6. `cd ../pantheon-isp_geral-backend-devops/ && docker compose up -d frontend`
 
 ## Observações
 

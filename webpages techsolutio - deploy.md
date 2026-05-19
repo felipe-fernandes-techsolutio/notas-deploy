@@ -6,25 +6,27 @@ O processo de deploy das três landing pages é idêntico, alterando apenas o no
 - https://aiquanta.com.br/ 	> `aiquanta-website`
 - https://cxsolutio.com/ 	> `cxsolutio-website`
 
-**Local**
+**Local**    
 Gerar arquivo *.tar* localmente:
-1.  docker build -t aiquanta-website .
-2.  docker save -o aiquanta-website.tar aiquanta-website
+1.  `docker build -t aiquanta-website .`
+2.  `docker save -o aiquanta-website.tar aiquanta-website`
 
-**Servidor**
+**Servidor**    
 3. *Copiar arquivo .tar para o servidor*
 4. *Parar container*
-	- docker stop techsolutio-website && docker rm techsolutio-website && docker rmi techsolutio-website
-	- docker stop aiquanta-website && docker rm aiquanta-website && docker rmi aiquanta-website
-	- docker stop cxsolutio-website && docker rm cxsolutio-website && docker rmi cxsolutio-website
+	- `docker stop techsolutio-website && docker rm techsolutio-website && docker rmi techsolutio-website`
+	- `docker stop aiquanta-website && docker rm aiquanta-website && docker rmi aiquanta-website`
+	- `docker stop cxsolutio-website && docker rm cxsolutio-website && docker rmi cxsolutio-website`
+	
 5. *Extrair imagem*
-	- docker load -i techsolutio-website.tar
-	- docker load -i aiquanta-website.tar
-	- docker load -i cxsolutio-website.tar
+	- ` docker load -i techsolutio-website.tar`
+	- ` docker load -i aiquanta-website.tar`
+	- ` docker load -i cxsolutio-website.tar`
+
 6. *Subir container* 
 	- *tech*: 
-		docker run -d -p 81:80 --name techsolutio-website techsolutio-website:latest
+		`docker run -d -p 81:80 --name techsolutio-website techsolutio-website:latest`
 	- *aiquanta*: 
-		docker run -d -p 82:80 --name aiquanta-website aiquanta-website:latest
+		`docker run -d -p 82:80 --name aiquanta-website aiquanta-website:latest`
 	- *cxsolutio*: 
-		docker run -d -p 83:80 --name cxsolutio-website cxsolutio-website:latest
+		`docker run -d -p 83:80 --name cxsolutio-website cxsolutio-website:latest`
